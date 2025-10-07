@@ -13,7 +13,7 @@ public class SonicVsShadow {
         int incerteza = 0;
 
         // -------------------------------
-        // 1️⃣ NOVOS ALIADOS
+        // 1 NOVOS ALIADOS
         System.out.print("Quantos novos aliados Sonic, Knuckles e Tails conseguiram? ");
         int aliados = entrada.nextInt();
 
@@ -24,7 +24,7 @@ public class SonicVsShadow {
         }
 
         // -------------------------------
-        // 2️⃣ DESAFIOS CONTRA SHADOW
+        // 2 DESAFIOS CONTRA SHADOW
         System.out.print("Pontuação no 1º confronto (0 a 10): ");
         double d1 = entrada.nextDouble();
 
