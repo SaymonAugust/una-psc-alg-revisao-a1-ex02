@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+public class SonicVsShadow {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        // Emoções positivas e negativas
+        int esperanca = 0;
+        int medo = 0;
+        int confianca = 0;
+        int desanimo = 0;
+        int determinacao = 0;
+        int incerteza = 0;
+
+        // -------------------------------
+        // 1️⃣ NOVOS ALIADOS
+        System.out.print("Quantos novos aliados Sonic, Knuckles e Tails conseguiram? ");
+        int aliados = entrada.nextInt();
+
+        if (aliados > 0) {
+            esperanca += aliados * 15; // Cada aliado soma 15 pontos de esperança
+        } else {
+            medo += 40; // Se nenhum aliado foi encontrado, medo aumenta
+        }
+
+        // -------------------------------
+        // 2️⃣ DESAFIOS CONTRA SHADOW
+        System.out.print("Pontuação no 1º confronto (0 a 10): ");
+        double d1 = entrada.nextDouble();
+
+        System.out.print("Pontuação no 2º confronto (0 a 10): ");
+        double d2 = entrada.nextDouble();
+
+        System.out.print("Pontuação no 3º confronto (0 a 10): ");
+        double d3 = entrada.nextDouble();
+
+        double media = (d1 + d2 + d3) / 3;
+
+        if (media >= 7) {
+            confianca += 60;
+        } else {
+            desanimo += 60;
+        }
+
+        // -------------------------------
+        // 3 ESTRATÉGIAS ANALISADAS
+        System.out.print("Quantas das 12 estratégias foram analisadas completamente? ");
+        int feitas = entrada.nextInt();
+
+        int naoFeitas = 12 - feitas;
+
+        determinacao += feitas * 10;
+        incerteza += naoFeitas * 10;
+
+        // -------------------------------
+        // 4 RESULTADOS
+        System.out.println("\n--- RESULTADO FINAL ---");
+        System.out.println("Esperança: " + esperanca);
+        System.out.println("Medo: " + medo);
+        System.out.println("Confiança: " + confianca);
+        System.out.println("Desânimo: " + desanimo);
+        System.out.println("Determinação: " + determinacao);
+        System.out.println("Incerteza: " + incerteza);
+
+        int positivas = esperanca + confianca + determinacao;
+        int negativas = medo + desanimo + incerteza;
+
+        System.out.println("\nTotal de Emoções Positivas: " + positivas);
+        System.out.println("Total de Emoções Negativas: " + negativas);
+
+        if (positivas > negativas) {
+            System.out.println("\nO Shadow foi derrotado!");
+        } else {
+            System.out.println("\nO Shadow venceu o time do Sonic!");
+        }
+
+        entrada.close();
+    }
+}
